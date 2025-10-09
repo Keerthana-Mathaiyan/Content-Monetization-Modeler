@@ -209,7 +209,7 @@ elif menu == "Prediction":
         if st.button("Predict"):
             X = numeric_df[feature_cols]
             y = numeric_df[target_col]
-            model = LinearRegression()
+            model = Lasso(alpha=1.0)
             model.fit(X, y)  # Safe: NaNs filled
             input_df = pd.DataFrame([input_data])
             pred = model.predict(input_df)[0]
@@ -236,3 +236,4 @@ elif menu == "About":
     """)
 
     st.markdown("👨‍💻 Author: **M.Keerthana**")
+

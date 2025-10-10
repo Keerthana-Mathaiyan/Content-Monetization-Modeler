@@ -107,7 +107,7 @@ if menu == "Home":
                 
 
 
-            ✅ **Conclusion:** The Lasso regression model is the best model here.
+
             """
 
             st.markdown(analysis_text)
@@ -241,7 +241,7 @@ elif menu == "Prediction":
         if st.button("Predict"):
             X = numeric_df[feature_cols]
             y = numeric_df[target_col]
-            model =  Lasso(alpha=1.0)
+            model =  LinearRegression()
             model.fit(X, y)  # Safe: NaNs filled
             input_df = pd.DataFrame([input_data])
             pred = model.predict(input_df)[0]
@@ -268,3 +268,4 @@ elif menu == "About":
     """)
 
     st.markdown("👨‍💻 Author: **M.Keerthana**")
+
